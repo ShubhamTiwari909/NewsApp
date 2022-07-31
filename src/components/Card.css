@@ -1,0 +1,9 @@
+.coverImage{
+    height:43vh;
+}
+
+@media screen and (max-width:600px) {
+    .coverImage{
+        height:35vh;
+    }
+}
