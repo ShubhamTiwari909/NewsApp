@@ -35,6 +35,7 @@ function News() {
     return (
         <div>
             <ButtonGroup setQuery={setQuery} />
+            <h1 className="text-center text-2xl text-indigo-600 font-bold mt-5">{query}</h1>
             <div className="grid lg:grid-cols-2">
                 {newsData && newsData.map(news => {
                     return (
