@@ -1,13 +1,12 @@
 import React from 'react'
 import './Card.css'
+import {buttonsCategory,states} from './ButtonLabels';
 function ButtonGroup({ setQuery }) {
-  const buttons = ['India', 'Asia', 'Covid', 'World', 'Sports', 'Science', 'Hollywood', 'Bollywood','Bussiness','Food','IT','Govt.Of.India','Finance','Astronomy','Space']
-  let states = ["Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttarakhand", "Uttar Pradesh", "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli", "Daman and Diu", "Delhi", "Lakshadweep", "Puducherry"]
   return (
     <div className="my-5 mx-3">
       <h1 className="text-center text-2xl text-indigo-600 font-bold my-2">Categories</h1>
       <div className="flex gap-x-8 buttonGroup">
-        {buttons.map(item => {
+        {buttonsCategory.map(item => {
           return (
             <button key={item}
               onClick={() => {

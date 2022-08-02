@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Card from './Card';
-import ButtonGroup from './ButtonGroup'
+import Card from './SmallComponents/Card';
+import ButtonGroup from './SmallComponents/ButtonGroup'
 
 function News() {
     const [newsData, setNewsData] = useState([])

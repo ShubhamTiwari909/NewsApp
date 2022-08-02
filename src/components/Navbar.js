@@ -33,7 +33,7 @@ function Navbar() {
                         <ul className="flex flex-col -mx-4 lg:flex-row list-none lg:ml-auto">
                             <li className="">
                                 <div onClick={() => setNavbarOpen(!navbarOpen)}
-                                    className={`mt-2 px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75`}>
+                                    className={`mt-2 px-3 py-2.5 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75`}>
                                     <NavLink to="/" onClick={() => setNavbarOpen(!navbarOpen)}>Home</NavLink>
                                 </div>
                             </li>

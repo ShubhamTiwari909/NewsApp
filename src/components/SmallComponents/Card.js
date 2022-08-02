@@ -1,5 +1,5 @@
 import React from 'react'
-import QuanticoNews from './Images/QuanticoNews.jpg'
+import QuanticoNews from '../Images/QuanticoNews.jpg'
 import './Card.css'
 
 function Card({ Title, Description, Link, Date, Image }) {
