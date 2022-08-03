@@ -52,7 +52,6 @@ function Navbar() {
                                 <p className={`mt-2 px-3 py-2.5 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75`}
                                     onClick={() => setNavbarOpen(!navbarOpen)}>
                                     <NavLink to="/about" onClick={() => setNavbarOpen(!navbarOpen)}>About</NavLink>
-
                                 </p>
                             </li>
                         </ul>
