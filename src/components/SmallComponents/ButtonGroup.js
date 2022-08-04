@@ -14,7 +14,7 @@ function ButtonGroup({ setQuery }) {
                 localStorage.setItem('Query', item);
                 window.location.reload();
               }}
-              className="button-85 my-3 ">
+              className="px-4 py-2 bg-slate-800 text-indigo-100 rounded-full text-center ring-2 ring-offset-2 ring-indigo-400 my-3 ">
               {item}
             </button>
           )

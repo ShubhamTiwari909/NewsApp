@@ -7,11 +7,11 @@ function Navbar() {
 
     return (
         <div>
-            <nav className="w-full flex flex-wrap items-center justify-between px-2 py-3 bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900">
+            <nav className="w-full flex flex-wrap items-center justify-between px-2 py-3 bg-gradient-to-r from-slate-700 via-indigo-900 to-violet-900">
                 <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
                         <div
-                            className="grid grid-cols-2 place-items-center lg:text-xl font-bold leading-relaxed mr-4 py-2 whitespace-nowrap text-white"
+                            className="grid grid-cols-2 place-items-center text-xl font-bold leading-relaxed mr-4 py-2 whitespace-nowrap text-white"
                         >
                             Quantico-News
                         </div>
@@ -33,23 +33,23 @@ function Navbar() {
                         <ul className="flex flex-col -mx-4 lg:flex-row list-none lg:ml-auto">
                             <li className="">
                                 <div onClick={() => setNavbarOpen(!navbarOpen)}
-                                    className={`mt-2 px-3 py-2.5 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75`}>
+                                    className={`mt-2 px-3 py-2.5 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75`}>
                                     <NavLink to="/" onClick={() => setNavbarOpen(!navbarOpen)}>Home</NavLink>
                                 </div>
                             </li>
                             <li className="nav-item">
-                                <p className={`mt-2 px-3 py-2.5 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75`}>
+                                <p className={`mt-2 px-3 py-2.5 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75`}>
                                     <NavLink to="/search" onClick={() => setNavbarOpen(!navbarOpen)}>Search</NavLink>
                                 </p>
                             </li>
                             <li className="nav-item">
-                                <p className={`mt-2 px-3 py-2.5 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75`}
+                                <p className={`mt-2 px-3 py-2.5 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75`}
                                 >
                                     <NavLink to="/contact" onClick={() => setNavbarOpen(!navbarOpen)}>Contact</NavLink>
                                 </p>
                             </li>
                             <li className="nav-item">
-                                <p className={`mt-2 px-3 py-2.5 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75`}
+                                <p className={`mt-2 px-3 py-2.5 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75`}
                                     onClick={() => setNavbarOpen(!navbarOpen)}>
                                     <NavLink to="/about" onClick={() => setNavbarOpen(!navbarOpen)}>About</NavLink>
                                 </p>
