@@ -35,7 +35,7 @@ function Search() {
 
 
     return (
-        <div>
+        <div className="bg-slate-100 pt-20">
             <form className="h-48 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 place-items-center"
                 onSubmit={searchNews}>
                 <div className="justify-self-center lg:justify-self-end md:justify-self-end ">

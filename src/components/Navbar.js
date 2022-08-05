@@ -5,7 +5,7 @@ function Navbar() {
 
     return (
         <div>
-            <nav className="w-full flex flex-wrap items-center justify-between px-2 py-3 bg-gradient-to-r from-slate-700 via-indigo-900 to-violet-900">
+            <nav className="w-full z-10 flex flex-wrap items-center justify-between px-2 py-4 fixed top-0 bg-gradient-to-r from-slate-700 via-indigo-900 to-violet-900">
                 <div className="container px-4 mx-auto flex flex-wrap items-center justify-center">
                     <div
                         className="text-xl text-center font-bold text-white justify-self-center"
@@ -15,7 +15,6 @@ function Navbar() {
                 </div>
             </nav>
             <div className="">
-
                 <section id="bottom-navigation" className="block fixed inset-x-0 bottom-0 z-10 bg-white shadow">
                     <div id="tabs" className="flex justify-between">
                         <div className="w-full grid grid-cols-1 text-lg bg-slate-700 text-slate-100 focus:text-indigo-200 hover:text-violet-400 justify-center text-center pt-2 pb-1">

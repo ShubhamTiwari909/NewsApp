@@ -3,10 +3,10 @@ import React from 'react'
 function Contact() {
     return (
         <div>
-            <div className="grid align-items-center">
+            <div className="grid align-items-center pt-20">
                 <div className="p-4 bg-slate-100">
-                    <h1 className="text-center my-4 text-indigo-700 font-bold text-3xl">Contacts</h1>
-                    <div className="grid  grid-cols-2 gap-y-16 place-items-center lg:gap-y-12 text-violet-500 md:gap-4 
+                    <h1 className="text-center py-4 text-indigo-700 font-bold text-3xl">Contacts</h1>
+                    <div className="grid grid-cols-2 gap-y-16 place-items-center lg:gap-y-12 text-violet-500 md:gap-4 
                      px-3 py-6 text-6xl md:text-4xl lg:text-6xl">
                         <a
                             rel="noopener noreferrer" href="https://www.instagram.com/s_h.u_b.h_a.m_2k99/"
@@ -46,7 +46,7 @@ function Contact() {
                                 rel="noopener noreferrer" href="https://medium.com/@shubhmtiwri00"
                                 target="_blank"
                                 className="justify-self-center animate__animated animate__backInDown"
-                            ><i class="fa-brands fa-medium"></i></a>
+                            ><i className="fa-brands fa-medium"></i></a>
 
                         </div>
                     </div>

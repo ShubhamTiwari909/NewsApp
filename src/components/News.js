@@ -46,7 +46,7 @@ function News() {
       console.log(newsData)
 
     return (
-        <div className="mb-10">
+        <div className="bg-slate-100 py-20">
             <ButtonGroup setQuery={setQuery} />
             <h1 className="text-center text-2xl text-indigo-600 font-bold mt-5">{query}</h1>
             <div className="grid lg:grid-cols-2">

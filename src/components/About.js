@@ -21,7 +21,7 @@ function About() {
         }
     ]
     return (
-        <div className="bg-slate-100">
+        <div className="bg-slate-100 z-0 mt-16">
             <div className="grid px-4 md:grid-cols-3 place-content-center py-10 lg:py-5">
                 {aboutDetails.map(item => {
                     return (
