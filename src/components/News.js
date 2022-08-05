@@ -32,6 +32,19 @@ function News() {
         });
     }, [])
 
+    useEffect(() => {
+        localStorage.setItem('items', JSON.stringify(newsData));
+    }, []);
+
+    useEffect(() => {
+        const items = JSON.parse(localStorage.getItem('items'));
+        if (items) {
+         setNewsData(items);
+        }
+      }, []);
+      
+      console.log(newsData)
+
     return (
         <div className="mb-10">
             <ButtonGroup setQuery={setQuery} />
