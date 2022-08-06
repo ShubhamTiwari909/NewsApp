@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Card from './SmallComponents/Card';
 import ButtonGroup from './SmallComponents/ButtonGroup'
+import SelectGroup from './SmallComponents/SelectGroup';
 
 function News() {
     const [newsData, setNewsData] = useState([])
-    const [query, setQuery] = useState(localStorage.getItem('Query'))
+    const [query, setQuery] = useState(localStorage.getItem('Query') || 'world')
 
     console.log(query)
     const options = {
@@ -48,6 +49,7 @@ function News() {
     return (
         <div className="bg-slate-100 py-20">
             <ButtonGroup setQuery={setQuery} />
+            <SelectGroup setQuery={setQuery} />
             <h1 className="text-center text-2xl text-indigo-600 font-bold mt-5">{query}</h1>
             <div className="grid lg:grid-cols-2">
                 {newsData && newsData.map(news => {
