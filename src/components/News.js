@@ -6,13 +6,13 @@ import SelectGroup from './SmallComponents/SelectGroup';
 
 function News() {
     const [newsData, setNewsData] = useState([])
-    const [query, setQuery] = useState(localStorage.getItem('Query') || 'world')
-
+    const [query, setQuery] = useState(localStorage.getItem('Query') === null ? 'world' : localStorage.getItem('Query'))
+    console.log(localStorage.getItem('Query'))
     const options = {
         method: 'GET',
         url: 'https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI',
         params: {
-            q: localStorage.getItem('Query'),
+            q: localStorage.getItem('Query') === null ? 'world' : localStorage.getItem('Query'),
             pageNumber: '1',
             pageSize: '50',
             autoCorrect: 'true',

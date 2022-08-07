@@ -7,6 +7,7 @@ import Card from './SmallComponents/Card'
 function Search() {
     const [newsData, setNewsData] = useState([])
     const [query, setQuery] = useState("")
+    const [loadings, setLoading] = useState("")
 
     const options = {
         method: 'GET',
@@ -26,6 +27,10 @@ function Search() {
 
     const searchNews = (e) => {
         e.preventDefault();
+        setLoading("Loading...")
+        setTimeout(() => {
+            setLoading("")
+        }, 2500);
         axios.request(options).then(function (response) {
             setNewsData(response.data.value);
         }).catch(function (error) {
@@ -44,7 +49,7 @@ function Search() {
 
                 <input type="text" name="query" placeholder='search...' value={query} onChange={(e) => setQuery(e.target.value)}
                     className="ring-2 ring-gray-dark px-3 rounded-xl py-2 outline-none hover:scale-110 hover:ring-green-400
-                transition-all duration-700 ease-in-out" required/>
+                transition-all duration-700 ease-in-out" required />
                 <div className="justify-self-center lg:justify-self-start">
                     <button type="submit"
                         className="flex space-x-3 mr-7 font-semibold 
@@ -56,6 +61,8 @@ function Search() {
             </form>
 
             <h1 className="text-center text-2xl text-indigo-600 font-bold mt-5">{query}</h1>
+            <h1 className="text-center text-2xl text-indigo-500 font-bold mt-5">{loadings}</h1>
+
             <div className="grid lg:grid-cols-2">
                 {newsData && newsData.map(news => {
                     return (

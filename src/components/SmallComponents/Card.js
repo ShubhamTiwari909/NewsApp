@@ -15,7 +15,8 @@ function Card({ Title, Description, Link, Date, Image }) {
                         <h1 className="text-stone-600 text-lg font-bold ">
                             {Title}
                         </h1>
-                        <h1 className="text-stone-600 text-xs mt-1">{Date}</h1>
+                        <h1 className="text-stone-600 text-xs mt-1">{Date.slice(0,10)}</h1>
+                        <h1 className="text-stone-600 text-xs mt-1">{Date.slice(11)} <span>{Number(Date.slice(11,13)) > 12 ? 'pm' : 'am'}</span></h1>
                     </div>
                     <h1 className={`text-sm text-stone-600 mb-1 lg:text-lg overflow-hidden`}
                         style={{ height: "55px" }}>

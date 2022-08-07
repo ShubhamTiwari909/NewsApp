@@ -1,5 +1,6 @@
 const buttonsCategory = ['India', 'Asia', 'Covid', 'World', 'Sports', 'Science',
- 'Hollywood', 'Bollywood','Bussiness','Food','IT','Govt.Of.India','Finance','Astronomy','Space']
+ 'Hollywood', 'Bollywood','Bussiness','Food','IT','Govt.Of.India','Finance','Astronomy','Space',
+'IndianStockMarket']
 
 
 const states = ["Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", 
