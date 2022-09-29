@@ -3,8 +3,10 @@ import axios from 'axios'
 import { FaSearchengin } from 'react-icons/fa'
 import { BsGlobe2 } from 'react-icons/bs'
 import Card from './SmallComponents/Card'
+import DarkModeButton from './SmallComponents/DarkmodeButton'
 
-function Search() {
+
+function Search({darkMode,darkModeEnabled,darkModeTrigger}) {
     const [newsData, setNewsData] = useState([])
     const [query, setQuery] = useState("")
     const [loadings, setLoading] = useState("")
@@ -40,7 +42,8 @@ function Search() {
 
 
     return (
-        <div className="bg-slate-100 pt-20">
+        <div className={`${darkModeEnabled ? darkMode.darkModeBgColor : darkMode.lightModeBgColor} pt-20`}>
+            <DarkModeButton darkModeEnabled={darkModeEnabled} darkModeTrigger={darkModeTrigger} />
             <form className="h-48 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 place-items-center"
                 onSubmit={searchNews}>
                 <div className="justify-self-center lg:justify-self-end md:justify-self-end ">
@@ -60,14 +63,14 @@ function Search() {
                 </div>
             </form>
 
-            <h1 className="text-center text-2xl text-indigo-600 font-bold mt-5">{query}</h1>
-            <h1 className="text-center text-2xl text-indigo-500 font-bold mt-5">{loadings}</h1>
+            <h1 className={`text-center text-2xl ${darkModeEnabled ? darkMode.darkModeTextColor : darkMode.lightModeTextColor} font-bold mt-5`}>{query}</h1>
+            <h1 className={`text-center text-2xl ${darkModeEnabled ? darkMode.darkModeTextColor : darkMode.lightModeTextColor} font-bold mt-5`}>{loadings}</h1>
 
             <div className="grid lg:grid-cols-2">
                 {newsData && newsData.map(news => {
                     return (
                         <div key={news.id}>
-                            <Card
+                            <Card darkMode={darkMode}
                                 Title={news.title}
                                 Description={news.description}
                                 Date={news.datePublished}

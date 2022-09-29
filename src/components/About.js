@@ -1,6 +1,8 @@
 import React from 'react'
 import AboutCard from './SmallComponents/AboutCard'
-function About() {
+import DarkModeButton from './SmallComponents/DarkmodeButton'
+
+function About({ darkMode,darkModeEnabled,darkModeTrigger }) {
 
     const aboutDetails = [
         {
@@ -21,11 +23,14 @@ function About() {
         }
     ]
     return (
-        <div className="bg-slate-100 z-0 mt-16">
-            <div className="grid px-4 md:grid-cols-3 place-content-center py-10 lg:py-5">
+        <div className={`${darkModeEnabled ? darkMode.darkModeBgColor : darkMode.lightModeBgColor} z-0 mt-10`}>
+            <DarkModeButton darkModeEnabled={darkModeEnabled} darkModeTrigger={darkModeTrigger} />
+            <div className="grid px-4 md:grid-cols-3 place-content-center py-10 lg:py-20">
                 {aboutDetails.map(item => {
                     return (
-                        <AboutCard Title={item.Title} Description={item.Description} Link={item.Link} />
+                        <div key={item.Title}>
+                            <AboutCard Title={item.Title} Description={item.Description} />
+                        </div>
                     )
                 })}
             </div>

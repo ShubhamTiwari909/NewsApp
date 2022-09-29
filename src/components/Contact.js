@@ -1,11 +1,13 @@
 import React from 'react'
+import DarkModeButton from './SmallComponents/DarkmodeButton'
 
-function Contact() {
+function Contact({darkMode,darkModeEnabled,darkModeTrigger}) {
     return (
         <div>
+            <DarkModeButton darkModeEnabled={darkModeEnabled} darkModeTrigger={darkModeTrigger} />
             <div className="grid align-items-center pt-20">
-                <div className="p-4 bg-slate-100">
-                    <h1 className="text-center py-4 text-indigo-700 font-bold text-3xl">Contacts</h1>
+                <div className={`p-4 ${darkModeEnabled ? darkMode.darkModeBgColor : darkMode.lightModeBgColor}`}>
+                    <h1 className={`text-center py-4 ${darkModeEnabled ? darkMode.darkModeTextColor : darkMode.lightModeTextColor} font-bold text-3xl`}>Contacts</h1>
                     <div className="grid grid-cols-2 gap-y-16 place-items-center lg:gap-y-12 text-violet-500 md:gap-4 
                      px-3 py-6 text-6xl md:text-4xl lg:text-6xl">
                         <a
@@ -33,7 +35,7 @@ function Contact() {
                         ></a>
                     </div>
                     <div className="my-16 lg:my-8">
-                        <h1 className="text-center my-4 text-indigo-700 font-bold text-3xl">Blogs</h1>
+                        <h1 className={`text-center my-4 ${darkModeEnabled ? darkMode.darkModeTextColor : darkMode.lightModeTextColor} font-bold text-3xl`}>Blogs</h1>
                         <div className="grid  grid-cols-2 gap-y-16 place-items-center lg:gap-y-12 text-violet-500 md:gap-4 
                      px-3 py-6 text-6xl md:text-4xl lg:text-6xl">
                             <a

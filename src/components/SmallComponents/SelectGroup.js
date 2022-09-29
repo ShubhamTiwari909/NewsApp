@@ -1,22 +1,22 @@
 import React from 'react'
 import { states, IT,Programming,SocialMedia } from './ButtonLabels';
 
-function SelectGroup({ setQuery }) {
+function SelectGroup({darkMode, darkModeEnabled,setQuery }) {
     return (
         <div className="flex space-x-10 buttonGroup">
-            <SelectTemplate Title="States" DataOptions={states} setQuery={setQuery} />
-            <SelectTemplate Title="IT" DataOptions={IT} setQuery={setQuery} />
-            <SelectTemplate Title="Programming" DataOptions={Programming} setQuery={setQuery} />
-            <SelectTemplate Title="Social_Media" DataOptions={SocialMedia} setQuery={setQuery} />
+            <SelectTemplate Title="States" DataOptions={states} setQuery={setQuery} darkMode={darkMode} darkModeEnabled={darkModeEnabled} />
+            <SelectTemplate Title="IT" DataOptions={IT} setQuery={setQuery} darkMode={darkMode} darkModeEnabled={darkModeEnabled} />
+            <SelectTemplate Title="Programming" DataOptions={Programming} setQuery={setQuery} darkMode={darkMode} darkModeEnabled={darkModeEnabled} />
+            <SelectTemplate Title="Social_Media" DataOptions={SocialMedia} setQuery={setQuery} darkMode={darkMode} darkModeEnabled={darkModeEnabled} />
         </div>
     )
 }
 
 
-const SelectTemplate = ({Title,DataOptions,setQuery}) => {
+const SelectTemplate = ({Title,DataOptions,setQuery,darkMode,darkModeEnabled}) => {
     return (
-        <div>
-            <h1 className="text-center text-2xl text-indigo-600 font-bold mt-5">{Title}</h1>
+        <div className={`${darkModeEnabled ? darkMode.darkModeBgColor : darkMode.lightModeBgColor}`}>
+            <h1 className={`text-center text-2xl text-indigo-600 font-bold mt-5`}>{Title}</h1>
             <div className="mt-2 mb-5 flex justify-center gap-x-8">
                 <select onChange={(e) => {
                     setQuery(e.target.value)

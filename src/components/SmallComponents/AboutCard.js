@@ -1,7 +1,7 @@
 import React from 'react'
 import '../component.css'
 
-function AboutCard({ Title, Description, Link}) {
+function AboutCard({ Title, Description}) {
 
 
   return (

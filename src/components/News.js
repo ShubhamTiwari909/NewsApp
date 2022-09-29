@@ -3,8 +3,10 @@ import axios from 'axios'
 import Card from './SmallComponents/Card';
 import ButtonGroup from './SmallComponents/ButtonGroup'
 import SelectGroup from './SmallComponents/SelectGroup';
+import DarkModeButton from './SmallComponents/DarkmodeButton'
 
-function News() {
+
+function News({darkMode,darkModeEnabled,darkModeTrigger}) {
     const [newsData, setNewsData] = useState([])
     const [query, setQuery] = useState(localStorage.getItem('Query') === null ? 'world' : localStorage.getItem('Query'))
     console.log(localStorage.getItem('Query'))
@@ -44,12 +46,13 @@ function News() {
     }, []);
 
     return (
-        <div className="bg-slate-100 py-20">
-            <ButtonGroup setQuery={setQuery} />
-            <SelectGroup setQuery={setQuery} />
+        <div className={`${darkModeEnabled ? darkMode.darkModeBgColor : darkMode.lightModeBgColor} py-20`}>
+            <DarkModeButton darkModeEnabled={darkModeEnabled} darkModeTrigger={darkModeTrigger} />
+            <ButtonGroup darkMode={darkMode} darkModeEnabled={darkModeEnabled} setQuery={setQuery} />
+            <SelectGroup darkMode={darkMode} darkModeEnabled={darkModeEnabled} setQuery={setQuery} />
             <h1 className="text-center text-2xl text-indigo-600 font-bold mt-5">{query}</h1>
             <div>{newsData.length === 0 ?
-                <div className="flex justify-center space-x-5 my-4 text-2xl text-slate-600">
+                <div className={`flex justify-center space-x-5 my-4 text-2xl ${darkModeEnabled ? darkMode.darkModeTextColor : darkMode.lightModeTextColor}`}>
                     <p>Loading</p>
                     <div className="w-5 h-5 mt-2 rounded-full animate-spin border-t-2 border-t-indigo-500
                     ring-2 ring-indigo-500 ring-offset-2"></div>
@@ -60,7 +63,7 @@ function News() {
             <div className="grid lg:grid-cols-2">
                 {newsData && newsData.map(news => {
                     return (
-                        <Card
+                        <Card darkMode={darkMode}
                             key={news.id}
                             Title={news.title}
                             Description={news.description}
